@@ -22,9 +22,33 @@ Partial Class Form1
     'コード エディターを使って変更しないでください。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container()
+        Me.UltraDateTimePicker1 = New FormControls.UltraDateTimePicker()
+        CType(Me.UltraDateTimePicker1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
+        '
+        'UltraDateTimePicker1
+        '
+        Me.UltraDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.UltraDateTimePicker1.Location = New System.Drawing.Point(12, 12)
+        Me.UltraDateTimePicker1.Name = "UltraDateTimePicker1"
+        Me.UltraDateTimePicker1.ReadOnly = True
+        Me.UltraDateTimePicker1.Size = New System.Drawing.Size(146, 22)
+        Me.UltraDateTimePicker1.TabIndex = 0
+        Me.UltraDateTimePicker1.TabstopWhenReadOnly = True
+        Me.UltraDateTimePicker1.Value = New Date(2016, 2, 14, 0, 0, 0, 0)
+        '
+        'Form1
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(282, 255)
+        Me.Controls.Add(Me.UltraDateTimePicker1)
+        Me.Name = "Form1"
         Me.Text = "Form1"
+        CType(Me.UltraDateTimePicker1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+
     End Sub
 
+    Friend WithEvents UltraDateTimePicker1 As UltraDateTimePicker
 End Class
