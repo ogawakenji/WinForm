@@ -23,7 +23,9 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.UltraDateTimePicker1 = New FormControls.UltraDateTimePicker()
+        Me.BaseDateTimePicker1 = New FormControls.BaseDateTimePicker()
         CType(Me.UltraDateTimePicker1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BaseDateTimePicker1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'UltraDateTimePicker1
@@ -37,18 +39,30 @@ Partial Class Form1
         Me.UltraDateTimePicker1.TabstopWhenReadOnly = True
         Me.UltraDateTimePicker1.Value = New Date(2016, 2, 14, 0, 0, 0, 0)
         '
+        'BaseDateTimePicker1
+        '
+        Me.BaseDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.BaseDateTimePicker1.Location = New System.Drawing.Point(12, 40)
+        Me.BaseDateTimePicker1.Name = "BaseDateTimePicker1"
+        Me.BaseDateTimePicker1.Size = New System.Drawing.Size(138, 22)
+        Me.BaseDateTimePicker1.TabIndex = 1
+        Me.BaseDateTimePicker1.Value = New Date(2016, 2, 14, 23, 4, 18, 238)
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(282, 255)
+        Me.Controls.Add(Me.BaseDateTimePicker1)
         Me.Controls.Add(Me.UltraDateTimePicker1)
         Me.Name = "Form1"
         Me.Text = "Form1"
         CType(Me.UltraDateTimePicker1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BaseDateTimePicker1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents UltraDateTimePicker1 As UltraDateTimePicker
+    Friend WithEvents BaseDateTimePicker1 As BaseDateTimePicker
 End Class

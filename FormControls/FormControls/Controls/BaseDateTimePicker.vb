@@ -20,20 +20,28 @@ Public Class BaseDateTimePicker
     Implements ISupportInitialize
 
     Private _Format As DateTimePickerFormat
+
     Private _CustomFormat As String
-    Private _readOnly As Boolean = False
-    Private _visible As Boolean = True
-    Private _tabStopWhenReadOnly As Boolean = False
-    Private _textBox As TextBox
-    Private initializing As Boolean = True
-    Private _isNull As Boolean = False
+
     Private _nullText As String = ""
+
+    Private _readOnly As Boolean = False
+
+    Private _visible As Boolean = True
+
+    Private _tabStopWhenReadOnly As Boolean = False
+
+    Private _textBox As TextBox
+
+    Private initializing As Boolean = True
+
+    Private _isNull As Boolean = False
 
 
     Public Sub New()
         initTextBox()
-        Me.Format = DateTimePickerFormat.Custom
-        _Format = DateTimePickerFormat.Long
+        MyBase.Format = DateTimePickerFormat.Custom
+        _Format = DateTimePickerFormat.Short
         If DesignMode Then
             setFormat()
         End If
@@ -44,7 +52,7 @@ Public Class BaseDateTimePicker
     End Sub
 
     Public Sub EndInit() Implements ISupportInitialize.EndInit
-        Me.Value = DateTime.Today
+        MyBase.Value = DateTime.Today
         initializing = False
         If DesignMode Then
             Return
@@ -75,9 +83,6 @@ Public Class BaseDateTimePicker
                 foundLoadingParent = True
             End If
         Loop While (Not foundLoadingParent)
-
-
-
 
 
 
@@ -182,25 +187,25 @@ Public Class BaseDateTimePicker
     End Property
 
     Private Sub setFormat()
-        Me.CustomFormat = Nothing
+        MyBase.CustomFormat = Nothing
         If _isNull Then
-            Me.CustomFormat = String.Concat("'", _nullText, "'")
+            MyBase.CustomFormat = String.Concat("'", Me._nullText, "'")
         Else
             Dim cultureInfo = Thread.CurrentThread.CurrentCulture
             Dim dTFormatInfo As DateTimeFormatInfo = cultureInfo.DateTimeFormat
 
             Select Case _Format
                 Case DateTimePickerFormat.Long
-                    Me.CustomFormat = dTFormatInfo.LongDatePattern
+                    MyBase.CustomFormat = dTFormatInfo.LongDatePattern
 
                 Case DateTimePickerFormat.Short
-                    Me.CustomFormat = dTFormatInfo.ShortDatePattern
+                    MyBase.CustomFormat = dTFormatInfo.ShortDatePattern
 
                 Case DateTimePickerFormat.Time
-                    Me.CustomFormat = dTFormatInfo.FullDateTimePattern
+                    MyBase.CustomFormat = dTFormatInfo.FullDateTimePattern
 
                 Case DateTimePickerFormat.Custom
-                    Me.CustomFormat = Me._CustomFormat
+                    MyBase.CustomFormat = Me._CustomFormat
 
             End Select
 
@@ -519,20 +524,20 @@ Public Class BaseDateTimePicker
     End Sub
 
     Private Sub showTextBox()
-        Me.Visible = False
+        MyBase.Visible = False
         _textBox.Visible = True
         _textBox.TabStop = _tabStopWhenReadOnly AndAlso Me.TabStop
 
     End Sub
 
     Private Sub showDTP()
-        _textBox.Visible = True
-        _textBox.TabStop = _tabStopWhenReadOnly AndAlso Me.TabStop
+        MyBase.Visible = True
+        _textBox.Visible = False
     End Sub
 
     Private Sub showNone()
         _textBox.Visible = False
-        Me.Visible = False
+        MyBase.Visible = False
     End Sub
 
     Private Sub updateReadOnlyTextBoxParent()
@@ -574,9 +579,6 @@ Public Class BaseDateTimePicker
 
         End If
     End Sub
-
-
-
 
     Public Shadows Sub Show()
         Me.Visible = True
