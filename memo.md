@@ -14,3 +14,8 @@ http://tomoemon.hateblo.jp/entry/20080430/p2
 http://ja.stackoverflow.com/questions/12614/%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88-cmd-exe-%E3%81%AE%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E5%9F%8B%E3%82%81%E8%BE%BC%E3%81%BF
 
 http://log.windows78.net/2015/06/1404/
+
+http://homepage1.nifty.com/rucio/main/tyukyu/tyukyu4.htm
+
+https://msdn.microsoft.com/ja-jp/library/cc344590.aspx
+
